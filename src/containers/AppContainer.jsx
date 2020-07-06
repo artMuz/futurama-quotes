@@ -18,6 +18,14 @@ export function AppContainer() {
       [e.currentTarget.name]: e.currentTarget.value
     });
   }
+
+  function handleClearInput() {
+    setInput({
+      characterName: '',
+      quotesNumber: ''
+    });
+  }
+
   function handleErrorInfo(response) {
     setErrorInfo(response.status);
   }
@@ -34,20 +42,26 @@ export function AppContainer() {
   async function handleGetQuotesPerCharacter() {
     setQuotesPerCharacter([]);
     try {
-      const response = await Axios.get(`${URL}characters/${input.characterName}/5`);
+      const response = await Axios.get(`${URL}characters/${input.characterName}/${input.quotesNumber}`);
       setQuotesPerCharacter(response.data);  
     } catch ({ response }) {
       handleErrorInfo(response);
     }
+    handleClearInput();
   }
 
   useEffect(() => {
     handleGetRandomQuote();
   }, []);
 
+  console.log(input);
+  
+
   return(
     <Fragment>
-      <HeaderSection 
+      <HeaderSection
+        name={input.characterName}
+        quotesNumber={input.quotesNumber}
         randomQuote={randomQuote}
         handleInputChange={handleInputChange}
         handleGetQuotesPerCharacter={handleGetQuotesPerCharacter}

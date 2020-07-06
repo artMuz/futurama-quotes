@@ -4,6 +4,14 @@ export const HeadingMain = styled.h1`
   color: #228c9c;
   font-size: 2rem;
   padding: 1rem;
+  text-align: center;
+  width: fit-content;
+`;
+export const SubHeading = styled.h2`
+  color: #228c9c;
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-align: center;
   width: fit-content;
 `;
 
@@ -22,5 +30,6 @@ export const HeadingError = styled.h3`
   font-size: 1.5rem;
   margin: 0 auto;
   padding: 1rem;
+  text-align: center;
   width: fit-content;
 `;

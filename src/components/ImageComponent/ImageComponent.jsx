@@ -24,4 +24,9 @@ export const ImageRelatve = styled.img`
 export const ImageComponent = styled.img`
   height: ${props => props.height};
   width: ${props => props.width};
+
+  @media(max-width: 420px) {
+    max-height: 5rem;
+    max-width: 10rem;
+  }
 `;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { HeadingFancy } from '../Headings/Headings';
-import { TextInput } from '../TextInput/TextInput';
+import { HeadingFancy, SubHeading } from '../Headings/Headings';
+import { Input } from '../Inputs/Inputs';
 import HeaderImage from '../../images/logo.png';
 import { ImageComponent } from '../ImageComponent/ImageComponent';
 import { Header } from './Header';
 import { Button } from '../Button/Button';
 
-export function HeaderSection({ randomQuote, handleInputChange, handleGetQuotesPerCharacter }) {
+export function HeaderSection({ name, quotesNumber, randomQuote, handleInputChange, handleGetQuotesPerCharacter }) {
   return (
     <Header>
       <ImageComponent
@@ -21,11 +21,23 @@ export function HeaderSection({ randomQuote, handleInputChange, handleGetQuotesP
           {` (${randomQuote.character})`}
         </HeadingFancy>
       }
-      <TextInput
+      <SubHeading>Type the name of a Futurama character and pick a number of quotes.</SubHeading>
+      <Input
+        width="20rem"
         onChange={handleInputChange}
         name="characterName"
         type="text"
-        placeholder="Insert your favourite Futurama character"
+        placeholder="Insert the name"
+        value={name || ''}
+      />
+      <Input
+        width="5rem"
+        type="number"
+        min={1}
+        max={10}
+        name="quotesNumber"
+        onChange={handleInputChange}
+        value={quotesNumber}
       />
       <Button
         type="button"
