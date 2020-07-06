@@ -29,8 +29,7 @@ export function HeaderSection({ randomQuote, handleInputChange, handleGetQuotesP
       />
       <Button
         type="button"
-        onClick={(e) => e.preventDefault(),
-          handleGetQuotesPerCharacter}
+        onClick={handleGetQuotesPerCharacter}
       >
         Submit
       </Button>

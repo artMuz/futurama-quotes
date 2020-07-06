@@ -16,3 +16,11 @@ export const HeadingFancy = styled.h2`
   box-shadow: 2px 3px 3px #999;
   max-width: 75%;
 `;
+
+export const HeadingError = styled.h3`
+  color: red;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+  width: fit-content;
+`;
